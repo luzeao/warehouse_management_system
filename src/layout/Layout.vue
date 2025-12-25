@@ -65,7 +65,9 @@
               separator="/"
               class="hidden-xs-only"
             >
-              <el-breadcrumb-item :to="{ path: '/' }">控制台</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/' }"
+                >控制台</el-breadcrumb-item
+              >
               <el-breadcrumb-item>{{ route.meta.title }}</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
@@ -123,34 +125,34 @@
         @select="drawer = false"
       >
         <el-menu-item index="/dashboard">
-            <el-icon><DataBoard /></el-icon>
-            <span>控制台</span>
-          </el-menu-item>
+          <el-icon><DataBoard /></el-icon>
+          <span>控制台</span>
+        </el-menu-item>
 
-          <el-sub-menu index="products">
-            <template #title>
-              <el-icon><Goods /></el-icon>
-              <span>商品管理</span>
-            </template>
-            <el-menu-item index="/products">商品管理</el-menu-item>
-          </el-sub-menu>
+        <el-sub-menu index="products">
+          <template #title>
+            <el-icon><Goods /></el-icon>
+            <span>商品管理</span>
+          </template>
+          <el-menu-item index="/products">商品管理</el-menu-item>
+        </el-sub-menu>
 
-          <el-sub-menu index="inventory">
-            <template #title>
-              <el-icon><Box /></el-icon>
-              <span>库存管理</span>
-            </template>
-            <el-menu-item index="/inventory/inbound">入库管理</el-menu-item>
-            <el-menu-item index="/inventory/outbound">出库管理</el-menu-item>
-          </el-sub-menu>
+        <el-sub-menu index="inventory">
+          <template #title>
+            <el-icon><Box /></el-icon>
+            <span>库存管理</span>
+          </template>
+          <el-menu-item index="/inventory/inbound">入库管理</el-menu-item>
+          <el-menu-item index="/inventory/outbound">出库管理</el-menu-item>
+        </el-sub-menu>
 
-          <el-menu-item
-            index="/logs"
-            v-if="userRole === 'admin'"
-          >
-            <el-icon><List /></el-icon>
-            <span>系统日志</span>
-          </el-menu-item>
+        <el-menu-item
+          index="/logs"
+          v-if="userRole === 'admin'"
+        >
+          <el-icon><List /></el-icon>
+          <span>系统日志</span>
+        </el-menu-item>
       </el-menu>
     </el-drawer>
   </div>
@@ -272,10 +274,6 @@ const logout = () => {
 .app-main {
   background-color: #f0f2f5;
   padding: 24px;
-}
-
-.main-content {
-  /* 可以在这里添加最大宽度限制等 */
 }
 
 /* 过渡动画 */
